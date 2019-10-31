@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isFlower(){
+        var num = document.getElementById("flower").value;
+        num2 = parseInt(num);
+        var message = "no";
+        if(num2>100 && num2<999){
+            var a = num2%10;
+            num2 = parseInt(num2/10);
+            var b = num2%10;
+            num2 = parseInt(num2/10);
+            var c = num2;
+            if(a*a*a + b*b*b + c*c*c == parseInt(num)){
+                message = "yes";
+            }
+        }
+        window.alert(message);
+    }    
+    </script>
+</body>
+</html>
