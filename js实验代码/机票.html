@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>机票预订</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0}
+		#center4{
+            width: 190px;
+            height:180px;
+            float: left;
+            border:2px #DDDDDD solid;
+            border-radius: 8px;
+            position: relative;			
+            left: 5px;
+            top:10px
+        }
+		#center4 ul li{
+            list-style:none;
+            font-family:隶书;
+        }
+		#center32{
+            width: 786px;
+            height: 25px;
+            background-color: rgb(139, 207, 255);
+            float: left;
+            font-size: 15px;
+            position: relative;
+            top: 5px;
+            border:2px #ccc solid
+        }
+		#center32 span{
+            font-size: 12px;
+            color: red;
+        }
+		#center33 p{
+            font-size: 12px;
+            position:relative;
+            left: 15px;
+            top: 15px; 
+        }
+		#center33 span{
+            color: blue;
+        }
+		#center35{
+            float: left;
+            position: relative;
+            left: 30px;
+            top: 12px;
+            border:2px gray dashed;
+            border-radius: 5px;
+            background-color: #ccc
+        }
+        #center5{
+            float: left;
+            width: 930px;
+            height: 10;
+            margin: 15px 10px 25px 30px;
+            border: 2px #ccc solid
+        }
+        #index{
+            margin: 0 auto;
+            margin-bottom: 10px;
+            width: 700px;
+            height: 190px;
+            border:2px #ccc solid;
+            position: relative;
+            top: 20px;
+            left: 25px;
+            float: left
+        }
+		
+		#bottomFont{
+            float: left;
+            width: 170px;
+            margin: 10px;
+            padding: 10px 20px;
+        }
+		#bottom{
+            margin:0px 300px 20px 300px;
+            float: left;
+            width: 350px;
+            text-align: center;
+        }
+	</style>
+    <script type="text/javascript">
+    e1=false;
+         function bluree1(){
+            var msg1 = document.getElementById("msg1").value;
+            var patt1=/^[\u4E00-\u9FA5]{2,5}$/gi;
+            var bluree1=patt1.test(msg1);
+            if(bluree1==false){
+                msg11.innerHTML = '输入有误！';
+                document.getElementById("msg11").style.color="red";
+                e1=false;
+            }else if(bluree1==true){
+                msg11.innerHTML = '输入合法！';
+                document.getElementById("msg11").style.color="green";
+                e1=true;
+            }
+            return e1;
+         }
+
+    </script>
+    <script>
+            var count=1;
+            function remove1(e){
+                var item = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+                var divParent = document.getElementById("buyerParent");
+                divParent.removeChild(item);
+                count--;
+                document.getElementById("num123").innerHTML=count;
+                document.getElementById("price").innerHTML=count*2200;
+                console.log(count);
+            }
+            function add1(){
+                var divParent = document.getElementById("buyerParent");
+                document.getElementById("num123").innerHTML=++count;
+                document.getElementById("price").innerHTML=count*2200;
+                var newSelect=document.getElementById("index").cloneNode(true);
+                newSelect.style.display="block"; 
+                divParent.appendChild(newSelect);
+            }
+
+            function judge(name){
+                var msg1 = document.getElementById(name).value;
+                var patt1=/^[\u4E00-\u9FA5]{2,5}$/gi;
+                var bluree1=patt1.test(msg1);
+                if(bluree1==false){
+                    msg11.innerHTML = '输入有误！';
+                    document.getElementById(name).style.color="red";
+                }else if(bluree1==true){
+                    msg11.innerHTML = '输入合法！';
+                    document.getElementById(name).style.color="green";
+                }
+            }
+        </script>
+</head>
+<body>
+	<div style="width: 1200px;margin:0 auto;">
+	 <div style="width:1200px;height:20px;background-color:white;">
+		<div style="width: 100px;height: 20px;float: left"></div>
+		<div style="width: 700px;height: 20px;font-size: 12px;float: left;">
+		今天是2013年6月5日☀晴22℃~16℃
+		</div>
+        <div style="width: 400px;height: 20px;font-size: 12px;float: left">
+            <input type="button" value="登录" style="background-color:#FF6633; color:white; width: 50px; height: 20px; border: none; ">
+			&nbsp;|&nbsp;免费注册&nbsp;|&nbsp;手机客户端下载&nbsp;|&nbsp;设为首页&nbsp;|&nbsp;加入收藏夹
+	 	</div>
+	 </div>
+	 <div style="width:1200px; height:63px;background-color: #00ccff;" >
+	 	<p style="font-family:华文琥珀; font-size:40px;color: white">&emsp;&emsp;&nbsp;联盟.机票</p>
+	 </div>
+	 <div style="width: 1200px">
+	 	<div style="width: 101px;height: 260px;float: left;background-image: linear-gradient(0deg,#ffffff,#00ccff)"></div>
+	 	<div style="width: 998px;float: left;">
+	 		<div style="height: 45px;font-size: 18px;color: #3366FF;"><br>&emsp;机票预订</div>
+	 		<div style="float: left;width: 790px;">
+	 			<div id="center32">&emsp;|&nbsp;航班信息</div>
+	 			<div id="center33" style="width: 786px;height: 80px;"><br>
+	 			<p>海南航空&emsp;HU7718&emsp;&emsp;<span>[修改航班]&emsp;&nbsp;[退&nbsp;改&nbsp;签]</span>&emsp;&emsp;2013年06月17日&emsp;11:00&emsp;周水子国际机场 -- 起飞&emsp;&emsp;&emsp;&emsp;￥2200/成人</p>
+	 			<p>机型&emsp;738&emsp;<span>经停&emsp;&emsp;&emsp;[修改舱位]</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; 2013年06月17日&emsp;15:40&emsp;宝安国际机场 -- 到达&emsp;&emsp;&emsp;&emsp;&emsp;（含税费）</p></div>
+	 			<hr><span style="font-size: 13px">&emsp;总价：￥<span id=price>2200</span>（含税费）&emsp;&emsp;人数：<span id=num>1</span>人</span>&emsp;&emsp;<span style="font-size: 13px;color: blue">机票明细</span>
+	 			<div id="center32">&emsp;|&nbsp;乘客信息<span>&emsp;&emsp; 请准确填写乘客信息(姓名、证件号码)，以免在办理登机手续时发生问题。</span></div>
+                 <div style="float: left;position: relative;top: 14px;bottom: 8px">
+                    <span style="font-size: 13px">
+                        &emsp;&emsp;在常用姓名中搜索
+                    </span>
+                    &nbsp;<input type="text" style="width: 170px" placeholder="请输入姓名">
+                </div>
+                 <div id="center35"><span style="font-size: 13px">&emsp;
+                    <input type="checkbox">&emsp;刘某某&emsp;
+                    <input type="checkbox">&emsp;张某某&emsp;&emsp;
+                    <input type="checkbox">&emsp;王某某&emsp;&emsp;
+                    <input type="checkbox">&emsp;李某某&emsp;&emsp;&emsp;&emsp;|</span>
+                    <span style="font-size: 13px;color: blue">更多&emsp;</span></div>
+                 <div id="buyerParent" style="width:500px">
+                 <div id="index" style="display:none">
+                        <table   width="700px" height="190px" border="0" style="border:1px solid #000000;">
+                            <td  align="left">
+                                &emsp;第<span id=num123>1</span>位乘机人：
+                                <span style="float:right;">
+                                    <input type="checkbox">&nbsp;保存常用姓名&emsp;
+                                    <input type="button" onclick="remove1(event)" value="❌">
+                                </span>
+                            </td>
+                            <tr>
+                                <td>
+                                <span class="text_red" style="color:red;height: 25px; width: 50px;">&emsp;&emsp;*</span> 购票类型：
+                                <select style="height: 22px; width: 160px;">
+                                        <option value ="adult">成人票</option>
+                                        <option value ="child">儿童票</option>
+                                </select>
+                                ￥2200/成人（含税费） <span style="color: blue;">退改签</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="text_red" style="color:red">&emsp;&emsp;*</span> 
+                                    姓&emsp;&emsp; 名：<input type="text" placeholder="乔某某">
+                                    <span style="color: blue;">填写说明</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="text_red" style="color:red">&emsp;&emsp;*</span> 证件类型：
+                                    <select style="height: 22px; width: 160px;">
+                                            <option value ="identity">身份证</option>
+                                            <option value ="passport">护照</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr><td><span class="text_red" style="color:red">&emsp;&emsp;*</span> 证件号码： <input type="text" placeholder="22020*************"></td></tr>
+                        </table>
+                    </div>
+                    <div id="index" style="display:block">
+                            <table   width="700px" height="190px" border="0" style="border:1px solid #000000;">
+                                <td align="left">
+                                    &emsp;第1位乘机人：
+                                    <span style="float:right;">
+                                        <input type="checkbox">&nbsp;保存常用姓名&emsp;
+                                        <input type="button" onclick="remove1(event)" value="❌">
+                                    </span>
+                                </td>
+                                <tr>
+                                    <td>
+                                    <span class="text_red" style="color:red; ">&emsp;&emsp;*</span> 购票类型：
+                                    <select style="height: 22px; width: 160px;">
+                                            <option value ="adult">成人票</option>
+                                            <option value ="child">儿童票</option>
+                                    </select>
+                                    ￥2200/成人（含税费） <span style="color: blue;">退改签</span>
+                                    </td>
+                                </tr>
+                                <tr><td><span class="text_red" style="color:red">&emsp;&emsp;*</span> 
+                                    姓 &emsp;&emsp;名：<input type="text" placeholder="乔某某" >
+                                    <span style="color: blue;">填写说明</span>
+                                </td></tr>
+                                <tr>
+                                    <td>
+                                        <span class="text_red" style="color:red">&emsp;&emsp;*</span> 证件类型：
+                                        <select style="height: 22px; width: 160px;">
+                                                <option value ="identity">身份证</option>
+                                                <option value ="passport">护照</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr><td><span class="text_red" style="color:red">&emsp;&emsp;*</span> 证件号码： <input type="text" placeholder="22020*************"></td></tr>
+                            </table>
+                        </div>
+                 </div>
+	 			<div id="index" style="display: none;"><span style="font-size: 13px">&emsp;🚹第三位乘机人:<input type="text">
+	 				<div style="float: right;"><input type="checkbox">&nbsp;保存常用姓名&emsp;<input type="button" value="❌"></div></span><hr>
+	 				<div style="margin: 0 a">
+	 					<span style="font-size: 13px"><br>&emsp;&emsp;*购票类型：<select style="width: 200px"><option>成人票</option><option>学生票</option></select>&emsp;￥2200（含税费）&emsp;<span style="font-size: 13px;color: blue">退改签</span><br><br>&emsp;&emsp;*姓&emsp;&emsp;名：<input type="text" style="width: 195px"><span style="font-size: 13px;color: blue">&emsp;填写说明</span><br><br>&emsp;&emsp;*证件类型：<select style="width: 200px"><option>护照</option></select><br><br>&emsp;&emsp;*证件号码：<input type="text" style="width: 195px">
+	 					</span>
+	 				</div>
+	 			</div>
+	 			<div style="float: right;margin-top: 20px;margin-right: 20px;">
+                     <input type="button" onclick="add1()" style="background-color: white; border: 0px;" value="🚹增加乘客" id="zengjia">
+                </div>
+	 			<div id="center32">
+                     &emsp;|&nbsp;联系人信息
+                     <span>&emsp;&emsp;请您准确填写联系人信息(联系人、手机号码、E-mail)，以便我们与您联系。</span>
+                </div>
+                <div style="float: left;margin-top: 20px;margin-left: 35px;padding: 10px;border-bottom: 2px black solid;width: 710px">
+                    <span style="font-size: 13px">
+                        <span class="text_red" style="color:red">*
+                    </span>联&nbsp;系&nbsp;人：  
+                <input type="text" style="width: 180px" id="msg1" onblur="bluree1(this)">
+                <span id="msg11"></span><br><br>
+                <span class="text_red" style="color:red">*
+                </span>手机号码：
+                <input type="text" style="width:180px" id="msg2" onblur="bluree1()">
+                <span id="msg21"></span><br><br>&nbsp;&nbsp;联系电话：
+                <input type="text" style="width: 45px" placeholder="区号" id="msg3" onblur="bluree1()">&nbsp;
+                <input type="text" style="width: 75px" placeholder="电话号码" id="msg4" onblur="bluree1()">&nbsp;
+                <input type="text" style="width: 45px" placeholder="分机" id="msg5" onblur="bluree1()">
+                <span id="msg31"></span><span id="msg41"></span><span id="msg51"></span><br><br>&nbsp;&nbsp;传真号码：
+                <input type="text" style="width: 45px" placeholder="区号" id="msg7" onblur="bluree1()">&nbsp;
+                <input type="text" style="width: 75px" placeholder="电话号码" id="msg8" onblur="bluree1()">&nbsp;
+                <input type="text" style="width: 45px" placeholder="分机" id="msg9" onblur="bluree1()">
+                <span id="msg71"></span><span id="msg81"></span><span id="msg91">
+                </span><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail：
+                <input type="text" style="width:180px" id="msg6" onblur="bluree1()">
+                <span id="msg61"></span><br><br>&nbsp;&nbsp;联系地址：<input type="text" style="width:180px">
+            </span></div>
+                 <div style="float: left;margin: 10px 250px 0 250px;width: 250px;padding: 10px">
+                    <input type="button" value="上一步" style="width:70px;height: 25px">&emsp;&emsp;&emsp;&emsp;
+                    <input type="button" value="下一步" style="width:70px;height:25px;background-color: #FF6633; border: none;" onclick="tijiao()"></div>
+	 		</div>
+	 		<div id="center4">
+	 			<ul>
+	 				<li>&emsp;温馨提示</li><hr>
+                     <li>&emsp;航班查询</li>
+                     <li>&emsp; 机票价格</li>
+                     <li>&emsp; 支付方式</li>
+                     <li>&emsp; 配送方式</li>
+                     <li>&emsp; 行程单/报销凭据/发票</li>
+                     <li>&emsp; 订单修改与取消</li>
+                     <li>&emsp; 乘机常识</li>
+	 			</ul>
+	 		</div>
+	 		<div id="center5">
+	 			<div id="bottomFont">
+                     <span style="font-family: 宋体;">
+                        <p style="font-size: 15px">新手指南</p><hr>
+                        <p style="font-size: 12px">预订步骤</p>
+                        <p style="font-size: 12px">订单查询</p>
+                    </span>
+                </div>
+	 			<div id="bottomFont">
+                     <span style="font-family: 宋体;">
+                        <p style="font-size: 15px">支付方式</p><hr>
+                        <p style="font-size: 12px">在线支付</p>
+                        <p style="font-size: 12px">开通财付通</p>
+                    </span>
+                </div>
+	 			<div id="bottomFont">
+                     <span style="font-family: 宋体;">
+                        <p style="font-size: 15px">品质服务</p><hr>
+                        <p style="font-size: 12px">退改签说明</p>
+                        <p style="font-size: 12px">行程单配送方式</p>
+                        <p style="font-size: 12px">航空意外险</p>
+                    </span>
+                </div>
+                 <div id="bottomFont"><span style="font-family: 宋体;">
+                    <p style="font-size: 15px;">帮助信息</p><hr>
+                    <p style="font-size: 12px">免费邮寄行程单/保险发票</p>
+                </span>
+            </div>
+	 		</div>
+	 		<div id="bottom">
+    		<span style="font-size:13px;">关于我们&nbsp;|&nbsp;联系我们&nbsp;|&nbsp;用户协议&nbsp;|&nbsp;帮助信息</span><br>
+    		<span style="font-size:13px;">Copyright2012&nbsp;商家联盟&nbsp;版权所有乔禹淞&nbsp;辽ICP备09013204号-2</span>
+			</div>
+	 	</div>
+	 	<div style="width: 101px;height: 260px;float: left;background-image: linear-gradient(0deg,#ffffff,#00ccff)"></div>
+	 </div>
+	</div>
+</body>
+</html>
